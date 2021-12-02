@@ -1,5 +1,5 @@
 
-// Declaring Pins for Ultra Sonic Sensors.
+// Declaring Pins for UltraSonic Sensors.
 
 int  trigPinA = 2, echoPinA = 3;
 long durationA, distanceA;
@@ -43,14 +43,14 @@ void loop()
 
   // First set of parallel ultrasonic sensors.
 
-  digitalWrite(trigPinA,HIGH);
-  delay(1000);
-  digitalWrite(trigPinA, LOW);
+  digitalWrite(trigPinA,HIGH);           // Sets the trigPinA high (active).
+  delay(1000);                           // High for 1000 milliseconds i.e. 1 second.
+  digitalWrite(trigPinA, LOW);           // Resets trigPinA.
   
-  durationA = pulseIn(echoPinA, HIGH);
-  distanceA = durationA *0.034 /2;
+  durationA = pulseIn(echoPinA, HIGH);   // Returns the sound travel time in milliseconds.
+  distanceA = durationA *0.034 /2;       // Calulates the distance.
 
-  Serial.print(distanceA);
+  Serial.print(distanceA);              // Displays distanceA in the serial monitor.
   Serial.println(" CM DistanceA");
 
   delay(1000);
@@ -69,7 +69,7 @@ void loop()
   delay(1000);
 
 
-  differenceA = distanceA - distanceA1;
+  differenceA = distanceA - distanceA1;   // The width of the object between the parallel ultrasonic sensors.
   Serial.print("DifferenceA: ");
   Serial.println(differenceA);
   Serial.println("      ");
