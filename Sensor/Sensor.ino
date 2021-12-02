@@ -38,25 +38,25 @@ void setup()                         // Run the code at the begining of the prog
 
 
 
-void loop() 
+void loop()                            
 {
 
   // First set of parallel ultrasonic sensors.
 
-  digitalWrite(trigPinA,HIGH);           // Sets the trigPinA high (active).
+  digitalWrite(trigPinA,HIGH);           // Sets the trigPinA high (active) i.e send ultrasonic sound wave.
   delay(1000);                           // High for 1000 milliseconds i.e. 1 second.
   digitalWrite(trigPinA, LOW);           // Resets trigPinA.
   
-  durationA = pulseIn(echoPinA, HIGH);   // Returns the sound travel time in milliseconds.
+  durationA = pulseIn(echoPinA, HIGH);   // Returns the sound travel time in milliseconds i.e receive ultrasonic sound wave.
   distanceA = durationA *0.034 /2;       // Calulates the distance.
 
-  Serial.print(distanceA);              // Displays distanceA in the serial monitor.
+  Serial.print(distanceA);               // Displays distanceA in the serial monitor.
   Serial.println(" CM DistanceA");
 
   delay(1000);
 
 
-  digitalWrite(trigPinA1,HIGH);
+  digitalWrite(trigPinA1,HIGH);          // Same as trigPinA.
   delay(1000);
   digitalWrite(trigPinA1, LOW);
   
@@ -78,7 +78,7 @@ void loop()
   // Second set of parallel ultrasonic sensors.
 
 
-  digitalWrite(trigPinB,HIGH);
+  digitalWrite(trigPinB,HIGH);           // Same as trigPinA.
   delay(1000);
   digitalWrite(trigPinB, LOW);
   
@@ -91,7 +91,7 @@ void loop()
   delay(1000);
 
 
-  digitalWrite(trigPinB1,HIGH);
+  digitalWrite(trigPinB1,HIGH);         // Same as trigPinA.
   delay(1000);
   digitalWrite(trigPinB1, LOW);
   
